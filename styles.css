@@ -1,0 +1,383 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9dc6f0;
+    display: flex;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 230px;
+    min-height: 100vh;
+    background-color: #1f2937;
+    padding: 25px 15px;
+}
+
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: #374151;
+}
+
+
+/* ================= MAIN CONTENT ================= */
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+
+header {
+    margin-bottom: 30px;
+}
+
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+
+/* ================= DASHBOARD CARDS ================= */
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* ================= SALES TABLE ================= */
+
+.recent-sales {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+
+.recent-sales h2 {
+    margin-bottom: 20px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+th,
+td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+th {
+    background-color: #f3f4f6;
+}
+
+
+/* ================= PRODUCT PAGE ================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+
+.page-header h1 {
+    margin-bottom: 8px;
+}
+
+
+/* Add Product Button */
+
+.add-product-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+.add-product-btn:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* ================= PRODUCT FORM ================= */
+
+.product-form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    display: none;
+}
+
+
+.product-form h2 {
+    margin-bottom: 20px;
+}
+
+
+/* Form layout */
+
+.product-form form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form-group label {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+
+.form-group input,
+.form-group select,
+#searchProduct {
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+#searchProduct:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+
+/* Form buttons */
+
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+}
+
+
+.save-btn,
+.cancel-btn {
+    border: none;
+    padding: 11px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+
+.save-btn {
+    background-color: #16a34a;
+    color: white;
+}
+
+
+.save-btn:hover {
+    background-color: #15803d;
+}
+
+
+.cancel-btn {
+    background-color: #6b7280;
+    color: white;
+}
+
+
+.cancel-btn:hover {
+    background-color: #4b5563;
+}
+
+
+/* ================= PRODUCT LIST ================= */
+
+.products-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+#searchProduct {
+    width: 250px;
+}
+
+
+/* ================= PRODUCT TABLE ================= */
+
+.table-container {
+    overflow-x: auto;
+}
+
+
+#productsTable th,
+#productsTable td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+
+#productsTable th {
+    background-color: #f3f4f6;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+
+.edit-btn,
+.delete-btn {
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.edit-btn {
+    background-color: #f59e0b;
+    color: white;
+}
+
+
+.edit-btn:hover {
+    background-color: #d97706;
+}
+
+
+.delete-btn {
+    background-color: #dc2626;
+    color: white;
+}
+
+
+.delete-btn:hover {
+    background-color: #b91c1c;
+}
+
+
+/* Low stock */
+
+.low-stock {
+    font-weight: bold;
+    color: #dc2626;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 180px;
+    }
+
+
+    .main-content {
+        padding: 20px;
+    }
+
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+
+    .product-form form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+
+    #searchProduct {
+        width: 100%;
+    }
+
+}

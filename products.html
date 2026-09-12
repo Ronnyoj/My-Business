@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Business Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>My Business</h2>
+
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="sales.html">Sales</a>
+            <a href="customers.html">Customers</a>
+            <a href="expenses.html">Expenses</a>
+            <a href="reports.html">Reports</a>
+        </nav>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <div>
+                <h1>Products</h1>
+                <p>Manage your business products and stock</p>
+            </div>
+
+            <button class="add-product-btn" onclick="showForm()">
+                + Add Product
+            </button>
+        </header>
+
+
+        <!-- Add Product Form -->
+        <section class="product-form" id="productFormSection">
+
+            <h2>Add New Product</h2>
+
+            <form id="addProductForm">
+
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="e.g. Coca-Cola"
+                        required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="Food">Food</option>
+                        <option value="Household">Household</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="buyingPrice">Buying Price (UGX)</label>
+
+                    <input
+                        type="number"
+                        id="buyingPrice"
+                        placeholder="e.g. 1500"
+                        min="0"
+                        required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="sellingPrice">Selling Price (UGX)</label>
+
+                    <input
+                        type="number"
+                        id="sellingPrice"
+                        placeholder="e.g. 2000"
+                        min="0"
+                        required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        placeholder="e.g. 50"
+                        min="0"
+                        required>
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button type="submit" class="save-btn">
+                        Save Product
+                    </button>
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="hideForm()">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Product List -->
+        <section class="products-section">
+
+            <div class="products-header">
+
+                <h2>Product List</h2>
+
+                <input
+                    type="text"
+                    id="searchProduct"
+                    placeholder="Search products..."
+                    onkeyup="searchProducts()">
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table id="productsTable">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Buying Price</th>
+                            <th>Selling Price</th>
+                            <th>Stock</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>001</td>
+                            <td>Coca-Cola</td>
+                            <td>Drinks</td>
+                            <td>UGX 1,500</td>
+                            <td>UGX 2,000</td>
+                            <td>50</td>
+                            <td>
+                                <button class="edit-btn" type="button">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn" type="button">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>002</td>
+                            <td>Bread</td>
+                            <td>Food</td>
+                            <td>UGX 3,000</td>
+                            <td>UGX 4,000</td>
+                            <td>20</td>
+                            <td>
+                                <button class="edit-btn" type="button">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn" type="button">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>003</td>
+                            <td>Milk</td>
+                            <td>Dairy</td>
+                            <td>UGX 2,000</td>
+                            <td>UGX 2,500</td>
+                            <td class="low-stock">5</td>
+                            <td>
+                                <button class="edit-btn" type="button">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn" type="button">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>004</td>
+                            <td>Sugar</td>
+                            <td>Food</td>
+                            <td>UGX 4,000</td>
+                            <td>UGX 5,000</td>
+                            <td>30</td>
+                            <td>
+                                <button class="edit-btn" type="button">
+                                    Edit
+                                </button>
+
+                                <button class="delete-btn" type="button">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
